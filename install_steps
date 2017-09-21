@@ -1,0 +1,36 @@
+STEPS TO INSTALL PYTHON-ROCKSDB IN UBUNTU 16.04 LTS
+
+Step 1:Installing the dependencies:
+
+sudo apt-get install build-essential libsnappy-dev zlib1g-dev libbz2-dev libgflags-dev
+
+Step 2:Downloading and Compiling rocksdb 0.6.7 (note that python-rocksdb will be installed)
+
+git clone https://github.com/facebook/rocksdb.git
+cd rocksdb
+mkdir build && cd build
+cmake ..
+make
+sudo make install INSTALL_PATH=/usr
+
+Follow step 3 only if you want to use python-rocksdb in virtual environment or else go to step 4 directly
+
+Step 3:
+
+cd
+virtualenv pytest
+cd pytest
+. bin/activate
+pip3 install "Cython>=0.20"
+pip3 install git+git://github.com/twmht/python-rocksdb.git
+
+
+Step 4:(FOR SYSTEMWIDE INSTALLATION)
+
+sudo pip3 install "Cython>=0.20"
+sudo pip3 install git+git://github.com/twmht/python-rocksdb.git
+
+
+NOTE: The 0.6.7 version works with all the python versions. This method has been tried and tested in python 2.7, 3.5.2 and 3.6
+Following both the steps will let you use the python-rocksdb in both virtual environment as well as normally.
+If you plan to use Python IDE for rocksdb, please install use step 4 to install rocksdb.
