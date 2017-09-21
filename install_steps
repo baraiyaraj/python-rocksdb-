@@ -33,4 +33,4 @@ sudo pip3 install git+git://github.com/twmht/python-rocksdb.git
 
 NOTE: The 0.6.7 version works with all the python versions. This method has been tried and tested in python 2.7, 3.5.2 and 3.6
 Following both the steps will let you use the python-rocksdb in both virtual environment as well as normally.
-If you plan to use Python IDE for rocksdb, please install use step 4 to install rocksdb.
+If you plan to use Python IDE for rocksdb, please use step 4 to install rocksdb.
